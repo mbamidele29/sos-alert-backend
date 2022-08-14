@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "fb204725-b523-4524-bb65-1fb42e9aa80a",
+		"name": "sos-alert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13873695"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Michael\",\n    \"phoneNumber\":\"08112121212\",\n    \"password\":\"12345678\",\n    \"emailAddress\":\"michael@sos-alert.co\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_BASE_URL}}auth/register",
+							"host": [
+								"{{LOCAL_BASE_URL}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\":\"Michael\",\n    \"phoneNumber\":\"08112121212\"\n    \"emailAddress\":\"michael@sos-alert.co\",\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/register",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "437"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b5-FCyxoYSLRrAUxRWG3WXh84OXgNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 20:35:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"firstName\": \"Michael\",\n            \"emailAddress\": \"michael@sos-alert.co\",\n            \"phoneNumber\": \"08112121212\",\n            \"_id\": \"62f6b985106af1ce1b41148d\",\n            \"createdAt\": \"2022-08-12T20:35:17.126Z\",\n            \"updatedAt\": \"2022-08-12T20:35:17.126Z\",\n            \"__v\": 0\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY2Yjk4NTEwNmFmMWNlMWI0MTE0OGQiLCJpYXQiOjE2NjAzMzY1MTd9.L1G_pegj09327o8QxdOmHOCye7V9mczFPq0w0CuzTNk\"\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\":\"Michael\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/register",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f-UWsm+AGkzACJcjI1yZUE1JLHoFY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 20:36:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Users validation failed: emailAddress: email address is required, phoneNumber: phone number is required\",\n    \"data\": {},\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\":\"michael@sos-alert.co\",\n    \"password\":\"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_BASE_URL}}auth/login",
+							"host": [
+								"{{LOCAL_BASE_URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\":\"michael@sos-alert.co\",\n    \"password\":\"12345678\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/login",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "437"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b5-o5iYKSR8H+7VO1qsK+Va9AGgbZ8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 20:51:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"62f6bd34943d9d641858c323\",\n            \"firstName\": \"Michael\",\n            \"emailAddress\": \"michael@sos-alert.co\",\n            \"phoneNumber\": \"08112121212\",\n            \"createdAt\": \"2022-08-12T20:51:00.092Z\",\n            \"updatedAt\": \"2022-08-12T20:51:00.092Z\",\n            \"__v\": 0\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY2YmQzNDk0M2Q5ZDY0MTg1OGMzMjMiLCJpYXQiOjE2NjAzMzc0Nzh9.MUKbQxFIZ6QmNT8Apc-pr7PxDPUbNpx8Ryn5SXhifFk\"\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/login",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-s5BE5VirOJoWLGj3+p86RLRA0b8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 20:45:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"invalid credentials\",\n    \"data\": {},\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY2YmQzNDk0M2Q5ZDY0MTg1OGMzMjMiLCJpYXQiOjE2NjAzMzk5NDd9.rNY4ub2z3ujwz6glheSlXMwCMBp7LmzWBg4awxSL10o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"12345678\",\n    \"newPassword\":\"123456789\",\n    \"confirmPassword\":\"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_BASE_URL}}auth/change-password",
+							"host": [
+								"{{LOCAL_BASE_URL}}auth"
+							],
+							"path": [
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"12345678\",\n    \"newPassword\":\"123456789\",\n    \"confirmPassword\":\"123456789\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/change-password",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "274"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"112-vFVLLAWIU1rpSH1LcNpnBh3QLMY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 21:35:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"password updated successfully\",\n    \"data\": {\n        \"_id\": \"62f6bd34943d9d641858c323\",\n        \"firstName\": \"Michael\",\n        \"emailAddress\": \"michael@sos-alert.co\",\n        \"phoneNumber\": \"08112121212\",\n        \"createdAt\": \"2022-08-12T20:51:00.092Z\",\n        \"updatedAt\": \"2022-08-12T21:35:53.879Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"12345678\",\n    \"newPassword\":\"12345678\",\n    \"confirmPassword\":\"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_BASE_URL}}auth/change-password",
+									"host": [
+										"{{LOCAL_BASE_URL}}auth"
+									],
+									"path": [
+										"change-password"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-7zCMNUs1esdZRZ98rHiNsSVLUDo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 21:33:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"new password cannot be equal to old password\",\n    \"data\": {},\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LOCAL_BASE_URL",
+			"value": "localhost:3000/",
+			"type": "string"
+		}
+	]
+}

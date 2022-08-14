@@ -38,7 +38,7 @@ const actionRegister = async (req, res, next) => {
   }
 };
 
-const actionForgotPassword = async (req, res, next) => {
+const actionChangePassword = async (req, res, next) => {
   try {
     const { oldPassword, newPassword, confirmPassword } = req.body;
 
@@ -77,5 +77,5 @@ module.exports = {
   actionLogin,
   actionProfile,
   actionRegister,
-  actionForgotPassword,
+  actionChangePassword,
 };
